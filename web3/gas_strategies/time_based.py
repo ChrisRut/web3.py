@@ -23,7 +23,7 @@ def _get_avg_block_time(w3, sample_size):
 
     constrained_sample_size = min(sample_size, latest['number'])
     oldest = w3.eth.getBlock(latest['number'] - constrained_sample_size)
-    return (latest['timestamp'] - oldest['timestamp']) / constrained_sample_size
+    return (latest['timestamp'] - oldest.timestamp) / constrained_sample_size
 
 
 def _get_raw_miner_data(w3, sample_size):
